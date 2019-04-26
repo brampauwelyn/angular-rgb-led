@@ -4,7 +4,7 @@
 
   var ledController = function($scope,$http){
 
-    var ipaddress = "localhost:5000";
+    var ipaddress = "192.168.0.22:5000";
 
     $scope.red = 0;
     $scope.green = 0;
