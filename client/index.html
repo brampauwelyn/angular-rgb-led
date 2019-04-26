@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ledApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Angular RGB led Controller</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>Angular RGB led Controller</h1>
+
+  <div ng-controller="ledController">
+    <label for="red">Red</label>
+    <input id="red" type="range" ng-model="red" ng-change="changeLedColor()" min="0" value="0" max="255">
+    <label for="green">Green</label>
+    <input id="green" type="range" ng-model="green" ng-change="changeLedColor()" min="0" value="0" max="255">
+    <label for="blue">Blue</label>
+    <input id="blue" type="range" ng-model="blue" ng-change="changeLedColor()" min="0" value="0" max="255">
+    <div class="led-light"></div>
+  </div>
+  
+</body>
+</html>
