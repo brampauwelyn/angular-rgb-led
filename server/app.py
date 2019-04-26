@@ -11,7 +11,6 @@ greenpin = 18
 bluepin = 15
 
 led = RGBLED(redpin, greenpin, bluepin)
-led.on()
 
 @app.route('/hello')
 def hello():
@@ -23,6 +22,7 @@ def changeLedColor():
   green = int(request.args.get('g')) / 255
   blue = int(request.args.get('b')) / 255
   led.color = (red,green,blue)
+  sleep(5)
   return "OK"
   
 if __name__ == "__main__":
