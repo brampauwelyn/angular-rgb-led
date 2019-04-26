@@ -5,11 +5,7 @@ from time import sleep
 app = Flask(__name__)
 
 # define the GPIO pins for the led lights
-redpin = 14
-greenpin = 18
-bluepin = 15
 
-led = RGBLED(redpin, greenpin, bluepin)
 
 @app.route('/hello')
 def hello():
@@ -17,10 +13,14 @@ def hello():
 
 @app.route('/led', methods = ['GET'])
 def changeLedColor():
+  redpin = 14
+  greenpin = 18
+  bluepin = 15
+  led = RGBLED(redpin, greenpin, bluepin)
   red = int(request.args.get('r')) / 255
   green = int(request.args.get('g')) / 255
   blue = int(request.args.get('b')) / 255
-  led.color(red,green,blue)
+  led.color(1,1,1)
   sleep(1)
   return "red: {}, green:  {}, blue: {}".format(red,green,blue)
 
