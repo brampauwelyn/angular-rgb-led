@@ -20,9 +20,7 @@ def changeLedColor():
   red = int(request.args.get('r')) / 255
   green = int(request.args.get('g')) / 255
   blue = int(request.args.get('b')) / 255
-  led.color(1,1,1)
-  sleep(1)
-  led.close()
+  led.color = (1,1,1)
   return "red: {}, green:  {}, blue: {}".format(red,green,blue)
 
   
