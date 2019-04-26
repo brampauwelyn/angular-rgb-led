@@ -12,6 +12,7 @@ bluepin = 15
 
 led = RGBLED(redpin, greenpin, bluepin)
 led.color = (0,0,0)
+led.on_time(50)
 
 @app.route('/hello')
 def hello():
