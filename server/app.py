@@ -6,6 +6,12 @@ app = Flask(__name__)
 
 # define the GPIO pins for the led lights
 
+redpin = 14
+greenpin = 18
+bluepin = 15
+
+led = RGBLED(redpin, greenpin, bluepin)
+led.color = (0,0,0)
 
 @app.route('/hello')
 def hello():
@@ -13,10 +19,6 @@ def hello():
 
 @app.route('/led', methods = ['GET'])
 def changeLedColor():
-  redpin = 14
-  greenpin = 18
-  bluepin = 15
-  led = RGBLED(redpin, greenpin, bluepin)
   red = int(request.args.get('r')) / 255
   green = int(request.args.get('g')) / 255
   blue = int(request.args.get('b')) / 255
