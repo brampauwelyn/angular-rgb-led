@@ -20,10 +20,9 @@ def changeLedColor():
   red = int(request.args.get('r')) / 255
   green = int(request.args.get('g')) / 255
   blue = int(request.args.get('b')) / 255
-  while True:
-    led.color = (red,green,blue)
-    sleep(0.1)
-    return "OK"
+  led.color = (red,green,blue)
+  sleep(1)
+  return "OK"
   
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)
