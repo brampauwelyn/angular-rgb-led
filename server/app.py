@@ -23,6 +23,7 @@ def changeLedColor():
   blue = int(request.args.get('b')) / 255
   led.color = (red,green,blue)
   sleep(5)
+  led.off()
   return "OK"
   
 if __name__ == "__main__":
