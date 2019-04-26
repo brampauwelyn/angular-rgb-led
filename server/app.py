@@ -21,7 +21,6 @@ def changeLedColor():
   green = int(request.args.get('g')) / 255
   blue = int(request.args.get('b')) / 255
   led.color = (red,green,blue)
-  sleep(1)
   return "OK"
   
 if __name__ == "__main__":
